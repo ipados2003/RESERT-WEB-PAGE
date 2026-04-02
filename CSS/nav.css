@@ -1,0 +1,19 @@
+.site-nav-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-brand {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.site-brand h2 {
+    margin: 0;
+}

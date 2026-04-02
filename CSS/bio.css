@@ -1,0 +1,37 @@
+/* Section BIO */
+#bio .bio-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+#bio .bio-img {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+#bio .bio-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    #bio .bio-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #bio .bio-img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+}

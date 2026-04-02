@@ -1,0 +1,25 @@
+.btn {
+    background-color: #f78ca0;
+    color: var(--color-bg, #fafafa);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: #f46e88;
+}
+
+.btn:focus-visible {
+    outline: 3px solid #1a1a1a;
+    outline-offset: 2px;
+}
