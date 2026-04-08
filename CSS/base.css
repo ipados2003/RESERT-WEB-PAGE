@@ -2,8 +2,6 @@
     --color-text: #1a1a1a;
     --color-bg: #fafafa;
     --space-paragraph: 1.5rem;
-    --h1-size: 4rem;
-    --h1-gap: 0.5rem;
 }
 
 html, body {
@@ -28,14 +26,19 @@ body {
 
 p {
     margin-bottom: var(--space-paragraph);
-   text-align: left;
-}
-
-h1 {
-    font-size: var(--h1-size);
-    margin-bottom: var(--h1-gap);
+    text-align: left;
 }
 
 .texte-center p {
     text-align: center;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero p {
+    margin: 0;
 }

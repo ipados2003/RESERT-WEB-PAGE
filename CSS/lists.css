@@ -10,14 +10,15 @@
 #exclusion li {
     margin-bottom: 2rem;
     padding-left: 4rem;
+    min-height: 40px;
     display: flex;
     align-items: center;
-    min-height: 40px;
 }
 
 /* Base partagée des puces icones */
 #cible li::before,
 #exclusion li::before {
+    display: inline-block;
     background-color: white;
     font-weight: bold;
     position: static;
