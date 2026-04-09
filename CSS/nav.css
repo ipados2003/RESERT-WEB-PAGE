@@ -7,13 +7,12 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
+
 }
 
 .site-brand {
     color: var(--color-text);
     text-decoration: none;
-}
-
-.site-brand h2 {
-    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
 }

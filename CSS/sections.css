@@ -7,7 +7,7 @@ section {
 .section-rouge {
     background-color: #b93b2f;
     color: white;
-    padding: 40px;
+    padding: min(20px, 5%);
     border-radius: 8px;
     margin-top: 4rem;
     margin-bottom: 4rem;

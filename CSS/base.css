@@ -13,7 +13,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--color-text);
     line-height: 1.6;
-    font-size: 22px;
+    font-size: 1.4rem;
     margin: 0;
     padding: 0;
     background-color: var(--color-bg);
@@ -24,9 +24,17 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+h2 {
+    font-size: clamp(1.8rem, 2vw + 1rem, 2.2rem);
+}
+
 p {
     margin-bottom: var(--space-paragraph);
     text-align: left;
+}
+
+strong {
+  font-size: 1.05em; /* Un peu plus grand que le texte normal */
 }
 
 .texte-center p {
