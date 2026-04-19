@@ -2,8 +2,8 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 15%;
-    padding: 20px;
+    width: max(150px, 20%);
+    padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -18,7 +18,7 @@
 
 .text-box p {
     margin: 0;
-    font-size: 1vw;
+    font-size: var(--base-font-size)
 }
 
 .text-box p:first-of-type {
