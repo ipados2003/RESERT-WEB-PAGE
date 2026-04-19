@@ -37,3 +37,11 @@
     font-size: 1.5em;
     line-height: 1;
 }
+
+.hidden-checkbox {
+    display: none;
+}
+
+#textbox-toggle:checked + .text-box {
+    display: none;
+}

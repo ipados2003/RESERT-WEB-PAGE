@@ -2,6 +2,9 @@
     --color-text: #1a1a1a;
     --color-bg: #fafafa;
     --space-paragraph: 1.5rem;
+    --base-font-size: clamp(1.1rem, 1.2vw + 0.6rem, 1.4rem);
+    --H2-font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+    --H3-font-size: clamp(1.4rem, 1.8vw + 0.8rem, 2rem);
 }
 
 html, body {
@@ -13,7 +16,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--color-text);
     line-height: 1.6;
-    font-size: 1.4rem;
+    font-size: var(--base-font-size);
     margin: 0;
     padding: 0;
     background-color: var(--color-bg);
@@ -24,8 +27,13 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+h3
+{
+    font-size: var(--H3-font-size);
+}
+
 h2 {
-    font-size: clamp(1.8rem, 2vw + 1rem, 2.2rem);
+    font-size: var(--H2-font-size);
 }
 
 p {

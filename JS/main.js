@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const closeBtn = document.querySelector('.close-btn');
     const textBox = document.querySelector('.text-box');
-
-    if (closeBtn && textBox) {
-        closeBtn.addEventListener('click', function() {
-            textBox.style.display = 'none';
-        });
-    }
-
     const paragraphs = textBox.querySelectorAll('p');
     const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
 
