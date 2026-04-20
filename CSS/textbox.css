@@ -9,7 +9,9 @@
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
-    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .text-box.fade-out {
@@ -18,7 +20,7 @@
 
 .text-box p {
     margin: 0;
-    font-size: var(--base-font-size)
+    margin-right: 7px;
 }
 
 .text-box p:first-of-type {
@@ -43,5 +45,6 @@
 }
 
 #textbox-toggle:checked + .text-box {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }

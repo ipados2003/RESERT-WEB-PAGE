@@ -11,5 +11,6 @@ section {
     border-radius: 8px;
     margin-top: 4rem;
     margin-bottom: 4rem;
+    box-shadow: var(--Box-shadow);
 }
 
