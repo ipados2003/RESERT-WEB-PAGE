@@ -45,4 +45,21 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextBox(); // Initial update
         setInterval(updateTextBox, 5000); // Update every 5 seconds
     }
+
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // Déclenche quand 10% de la section est visible
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
