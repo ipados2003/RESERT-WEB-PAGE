@@ -3,7 +3,7 @@
     bottom: 20px;
     right: 20px;
     width: max(150px, 20%);
-    padding: 10px;
+    padding: 10px 20px 10px 10px; /* Augmentation du padding à droite */
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -20,7 +20,7 @@
 
 .text-box p {
     margin: 0;
-    margin-right: 7px;
+    font-size: clamp(1rem, 1.1vw + 0.6rem, 1.2rem);
 }
 
 .text-box p:first-of-type {
