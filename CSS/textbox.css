@@ -1,34 +1,47 @@
 .text-box {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre l'image et le texte */
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: max(150px, 20%);
-    padding: 10px 20px 10px 10px; /* Augmentation du padding à droite */
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: max-content; /* Ajuste la largeur au contenu */
+    padding: 15px 25px; /* Augmentation du padding */
+    background-color: #ffffff; /* Fond blanc */
+    border: none; /* Suppression de la bordure */
+    border-radius: 15px; /* Coins plus arrondis */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Ombre plus douce */
     z-index: 1000;
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
-.text-box.fade-out {
-    opacity: 0;
+.text-box-icon {
+    width: 50px; /* Taille de l'icône augmentée */
+    height: 50px;
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-box p {
     margin: 0;
-    font-size: clamp(1rem, 1.1vw + 0.6rem, 1.2rem);
 }
 
-.text-box p:first-of-type {
-    color: blue;
+.text-box .text-content p:first-of-type {
+    font-size: 1rem;
+    font-weight: bold; /* Texte en gras */
+    color: #000;
 }
 
-.text-box p:nth-of-type(2) {
-    color: red;
+.text-box .text-content p:nth-of-type(2) {
+    font-size: 0.9rem;
+    color: #6c757d; /* Couleur grise */
 }
 
 .close-btn {
@@ -47,4 +60,8 @@
 #textbox-toggle:checked + .text-box {
     opacity: 0;
     visibility: hidden;
+}
+
+.text-box.fade-out {
+    opacity: 0;
 }
