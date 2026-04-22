@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 5px; /* Espace entre le texte et le bouton de fermeture */
 }
 
 .text-box p {
@@ -34,7 +35,7 @@
 }
 
 .text-box .text-content p:first-of-type {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: bold; /* Texte en gras */
     color: #000;
 }
@@ -64,4 +65,12 @@
 
 .text-box.fade-out {
     opacity: 0;
+}
+
+@media (max-width: 600px) {
+    .text-content {
+    align-items: flex-start; /* ou center selon le design souhaité */
+    margin-right: -65px;
+    max-width: 200px; /* Limite la largeur pour forcer le retour à la ligne */
+    }
 }
