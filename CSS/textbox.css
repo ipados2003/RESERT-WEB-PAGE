@@ -13,8 +13,9 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Ombre plus douce */
     z-index: 1000;
     opacity: 1;
+    transform: translateX(0);
     visibility: visible;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .text-box-icon {
@@ -61,10 +62,12 @@
 #textbox-toggle:checked + .text-box {
     opacity: 0;
     visibility: hidden;
+    transform: translateX(calc(100% + 20px));
 }
 
 .text-box.fade-out {
     opacity: 0;
+    transform: translateX(calc(100% + 20px));
 }
 
 @media (max-width: 600px) {

@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const textBox = document.querySelector('.text-box');
     const paragraphs = textBox.querySelectorAll('p');
     const toggleCheckbox = document.getElementById('textbox-toggle');
-    let first_time = true;
     
         
     const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé'];
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateTextBox() {
         if (paragraphs.length >= 2) {
-            // Fade out
             textBox.classList.add('fade-out');
 
             setTimeout(() => {
@@ -31,20 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentTime = randomTime;
                 paragraphs[0].textContent = `${currentName} ${base_txt}`;
                 paragraphs[1].textContent = `${base_time} ${currentTime}`;
-                if (first_time) {
-                    toggleCheckbox.checked = false;
-                    first_time = false;
-                }
 
                 textBox.classList.remove('fade-out');
-            }, 500); // Corresponds to the transition duration
+            }, 1000); // Corresponds to the transition duration
         }
     }
-
-    if (paragraphs.length >= 2) {
-        updateTextBox(); // Initial update
-        setInterval(updateTextBox, 5000); // Update every 5 seconds
-    }
+    
+    let intervalId = setInterval(updateTextBox, 7000); // Update every 7 seconds
+    toggleCheckbox.addEventListener('change', function() {
+        clearInterval(intervalId);
+        textBox.classList.add('fade-out');
+        })
 
     const sections = document.querySelectorAll('section');
 
