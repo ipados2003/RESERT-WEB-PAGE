@@ -71,9 +71,25 @@
 }
 
 @media (max-width: 600px) {
-    .text-content {
-    align-items: flex-start; /* ou center selon le design souhaité */
-    margin-right: -75px;
-    max-width: 200px; /* Limite la largeur pour forcer le retour à la ligne */
+    .text-box {
+        padding: 10px 15px;
+        right: 10px;
+        bottom: 10px;
+        max-width: 80%;
     }
+    .text-box-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .text-content {
+        align-items: flex-start;
+        max-width: 125px;
+    }
+    .text-box .text-content p:first-of-type {
+    font-size: 0.85rem;
+}
+
+    .text-box .text-content p:nth-of-type(2) {
+        font-size: 0.8rem;
+}
 }
