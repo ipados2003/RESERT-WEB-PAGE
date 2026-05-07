@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 paragraphs[1].textContent = `${base_time} ${currentTime}`;
 
                 textBox.classList.remove('fade-out');
-            }, 1000); // Corresponds to the transition duration
+            }, 2000); // Corresponds to the transition duration
         }
     }
     

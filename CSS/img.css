@@ -1,0 +1,19 @@
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#hero img {
+  width: 80%;
+  height: auto;
+}
+
+#méthode img {
+  margin-top: 10px;
+  width: max(10%, 40px);
+  height: auto;
+}
+#méthode h3 {
+  margin-top: -10px;
+}
