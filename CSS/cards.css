@@ -30,7 +30,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
 .feature-card-big {
@@ -43,6 +42,12 @@
     min-height: 50px;
 }
 
+.testimonial-columns img, 
+.feature-card {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-columns img:hover,
 .feature-card:hover {
     transform: translateY(-5px);
 }
