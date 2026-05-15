@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleCheckbox = document.getElementById('textbox-toggle');
     
         
-    const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé'];
+    const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé', 'Camille', 'Manon', 'Louise', 'Jeanne', 'Juliette', 'Rose', 'Ambre', 'Inès'];
     const times = ['1 jours', '10 minutes', '2 heures', '20 heures', '3 jours'];
     const base_txt = "a rempli le questionnaire";
     const base_time = "il y a";
@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 paragraphs[1].textContent = `${base_time} ${currentTime}`;
 
                 textBox.classList.remove('fade-out');
-            }, 2000); // Corresponds to the transition duration
+            }, 3000); // show 7sec fade-out for 3 seconds, then change text and fade-in
         }
     }
     
-    let intervalId = setInterval(updateTextBox, 7000); // Update every 7 seconds
+    let intervalId = setInterval(updateTextBox, 10000); // Update every 10 seconds
     toggleCheckbox.addEventListener('change', function() {
         clearInterval(intervalId);
         textBox.classList.add('fade-out');
