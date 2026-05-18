@@ -19,9 +19,10 @@
 }
 
 .text-box-icon {
-    width: 50px; /* Taille de l'icône augmentée */
+    width: 50px;
     height: 50px;
-    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    flex-shrink: 0;
+    border-radius: 25%;
 }
 
 .text-content {
@@ -80,10 +81,6 @@
     .text-box-icon {
         width: 35px;
         height: 35px;
-    }
-    .text-content {
-        align-items: flex-start;
-        max-width: 125px;
     }
     .text-box .text-content p:first-of-type {
     font-size: 0.85rem;

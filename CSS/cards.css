@@ -13,10 +13,13 @@
     margin-top: 2rem;
 }
 
-@media (max-width: 700px) {
-    .features-grid-4,
+@media (max-width: 600px) {
     .features-grid-2 {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .features-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 }
 

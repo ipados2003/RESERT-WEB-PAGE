@@ -12,8 +12,9 @@ function handleTextBox() {
     const toggleCheckbox = document.getElementById('textbox-toggle');
     
     const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé', 'Camille', 'Manon', 'Louise', 'Jeanne', 'Juliette', 'Rose', 'Ambre', 'Inès'];
-    const times = ['1 jour', '10 minutes', '2 heures', '20 heures', '3 jours'];
-    const base_txt = "a rempli le questionnaire";
+    const listrandomName = [...names].sort(() => Math.random() - 0.5);
+    const times = ['2 jours', '1 jour', '12 heures', '10 heures', '5 heures', '2 heures', '1 heure', '30 minutes', '10 minutes', '5 minutes', '1 minute'];
+    const base_txt = "a réservé une un appel";
     const base_time = "il y a";
     let currentName = "";
     let currentTime = "";
@@ -21,29 +22,22 @@ function handleTextBox() {
     function updateTextBox() {
         if (paragraphs.length >= 2) {
             textBox.classList.add('fade-out');
-
+            if (times.length <= 0) {
+                clearInterval(intervalId);
+                return;
+            }
             setTimeout(() => {
-                let randomName = currentName;
-                while (currentName === randomName) {
-                    randomName = names[Math.floor(Math.random() * names.length)];
-                }
-                
-                let randomTime = currentTime;
-                while (currentTime === randomTime) {
-                    randomTime = times[Math.floor(Math.random() * times.length)];
-                }
-
-                currentName = randomName;
-                currentTime = randomTime;
+                currentName = listrandomName.pop();
+                currentTime = times.pop();
                 paragraphs[0].textContent = `${currentName} ${base_txt}`;
                 paragraphs[1].textContent = `${base_time} ${currentTime}`;
 
                 textBox.classList.remove('fade-out');
-            }, 3000);
+            }, 2000);
         }
     }
     
-    let intervalId = setInterval(updateTextBox, 10000);
+    let intervalId = setInterval(updateTextBox, 8000);
 
     if (toggleCheckbox) {
         toggleCheckbox.addEventListener('change', function() {
