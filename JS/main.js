@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         
     const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé', 'Camille', 'Manon', 'Louise', 'Jeanne', 'Juliette', 'Rose', 'Ambre', 'Inès'];
-    const times = ['1 jours', '10 minutes', '2 heures', '20 heures', '3 jours'];
+    const times = ['1 jour', '10 minutes', '2 heures', '20 heures', '3 jours']; //PLUS d'heur et de jour
     const base_txt = "a rempli le questionnaire";
     const base_time = "il y a";
     let currentName = "";

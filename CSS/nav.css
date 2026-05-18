@@ -16,6 +16,15 @@
 }
 
 .site-nav-inner a {
-    font-size: clamp(0.6rem, 0.2rem + 2vw, 1.6rem);
+    font-size: clamp(1.1rem, 0.2rem + 2.35vw, 1.7rem);
 }
 
+@media (max-width: 600px) {
+    .site-nav-inner {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .site-nav-inner a {
+        font-size: 1.2rem;
+    }
+}
