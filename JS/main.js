@@ -1,47 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
+    handleTextBox();
+    setupIntersectionObserver();
+    setupMenuToggle();
+});
+
+function handleTextBox() {
     const textBox = document.querySelector('.text-box');
+    if (!textBox) return;
+
     const paragraphs = textBox.querySelectorAll('p');
     const toggleCheckbox = document.getElementById('textbox-toggle');
     
-        
     const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé', 'Camille', 'Manon', 'Louise', 'Jeanne', 'Juliette', 'Rose', 'Ambre', 'Inès'];
-    const times = ['1 jour', '10 minutes', '2 heures', '20 heures', '3 jours']; //PLUS d'heur et de jour
+    const times = ['1 jour', '10 minutes', '2 heures', '20 heures', '3 jours'];
     const base_txt = "a rempli le questionnaire";
     const base_time = "il y a";
     let currentName = "";
     let currentTime = "";
-    let randomName = "";
-    let randomTime = "";
 
     function updateTextBox() {
         if (paragraphs.length >= 2) {
             textBox.classList.add('fade-out');
 
             setTimeout(() => {
-                // Change text
+                let randomName = currentName;
                 while (currentName === randomName) {
                     randomName = names[Math.floor(Math.random() * names.length)];
                 }
+                
+                let randomTime = currentTime;
                 while (currentTime === randomTime) {
                     randomTime = times[Math.floor(Math.random() * times.length)];
                 }
+
                 currentName = randomName;
                 currentTime = randomTime;
                 paragraphs[0].textContent = `${currentName} ${base_txt}`;
                 paragraphs[1].textContent = `${base_time} ${currentTime}`;
 
                 textBox.classList.remove('fade-out');
-            }, 3000); // show 7sec fade-out for 3 seconds, then change text and fade-in
+            }, 3000);
         }
     }
     
-    let intervalId = setInterval(updateTextBox, 10000); // Update every 10 seconds
-    toggleCheckbox.addEventListener('change', function() {
-        clearInterval(intervalId);
-        textBox.classList.add('fade-out');
-        })
+    let intervalId = setInterval(updateTextBox, 10000);
 
+    if (toggleCheckbox) {
+        toggleCheckbox.addEventListener('change', function() {
+            clearInterval(intervalId);
+            textBox.classList.add('fade-out');
+        });
+    }
+}
+
+function setupIntersectionObserver() {
     const sections = document.querySelectorAll('section');
+    if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -51,10 +65,55 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.1 // Déclenche quand 10% de la section est visible
+        threshold: 0.1
     });
 
     sections.forEach(section => {
         observer.observe(section);
     });
-});
+}
+
+function ismobile() {
+    return window.innerWidth <= 600;
+}
+
+function setupMenuToggle() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNavInner = document.querySelector('.site-nav-inner');
+    const navLinks = document.querySelectorAll('.site-nav-inner a');
+
+    if (!menuToggle || !siteNavInner) return;
+
+    function hanfleResize() {
+        if (ismobile()) {
+            siteNavInner.inert = true;
+        } else {
+            siteNavInner.inert = false;
+        }
+    }
+
+    window.addEventListener('resize', hanfleResize);
+    hanfleResize();
+
+    function openMenu() {
+        siteNavInner.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        siteNavInner.inert = false;
+    }
+
+    function closeMenu() {
+        siteNavInner.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        siteNavInner.inert = true;
+    }
+
+    menuToggle.addEventListener('click', function() {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+}
+

@@ -20,7 +20,11 @@
 <body>
     <section class="main">
         <nav class="site-nav" aria-label="Navigation principale">
-            <div class="site-nav-inner">
+            <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            <div class="site-nav-inner" id="primary-navigation">
                 <a class="site-brand" href="#hero">Accueil</a>
                 <a class="site-brand" href="#méthode">Méthode</a>
                 <a class="site-brand" href="#preuves">Témoignages</a>
