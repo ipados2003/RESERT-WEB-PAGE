@@ -29,9 +29,8 @@ section.is-visible {
 .section-rouge {
     background-color: #b93b2f;
     color: white;
-    padding: min(20px, 5%);
+    padding: 3%;
     border-radius: 8px;
-    margin: 3rem max(auto, 16px);
     box-shadow: var(--Box-shadow);
 }
 

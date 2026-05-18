@@ -66,12 +66,10 @@
         position: fixed;
         top: 0;
         right: -100%; /* Commence hors de l'écran */
-        width: 200px;
-        height: 42vh;
         background-color: lightblue;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 60px;
+        padding-top: 30px;
         transition: right 0.3s ease-in-out;
         z-index: 1000;
     }
