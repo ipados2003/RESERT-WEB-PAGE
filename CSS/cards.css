@@ -45,12 +45,10 @@
     min-height: 50px;
 }
 
-.testimonial-columns img, 
 .feature-card {
     transition: transform 0.3s ease;
 }
 
-.testimonial-columns img:hover,
 .feature-card:hover {
     transform: translateY(-5px);
 }
