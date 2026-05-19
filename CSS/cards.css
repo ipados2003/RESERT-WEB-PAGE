@@ -77,3 +77,72 @@
     color: #666;
     margin-top: 10px;
 }
+
+@media (max-width: 600px) {
+    .carousel {
+    width: 100%;
+    overflow-x: auto;
+    margin: 3em auto;
+    display: flex;
+    gap: 1em;
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+    }
+
+    .carousel::scroll-marker-group{
+        display: flex;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+    .carousel .feature-card::scroll-marker, .carousel .column::scroll-marker {
+        content: ' ';
+        height: 0.7em;
+        width: 0.7em;
+        background-color: #666;
+        border-radius: 50%;
+    }
+    
+    .carousel .feature-card::scroll-marker:target-current, .carousel .column::scroll-marker:target-current {
+        background-color: tomato;
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel::scroll-button(right), .carousel::scroll-button(left) {
+        content: '→';
+        border: none;
+        background-color: tomato;
+        color: white;
+        font-size: 2em;
+        border-radius: 50%;
+        padding-bottom: .2em;
+        cursor: pointer;
+        position: fixed;
+        position-anchor: --carousel;
+        position-area: right center;
+    }
+    .carousel::scroll-button(left) {
+        content: '←';
+        position-area: left center;
+    }
+
+    .carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled {
+        opacity: 0.5;
+        cursor: auto;
+    }
+
+    .carousel .column {
+        display: contents;
+    }
+
+    .carousel .feature-card{
+        scroll-snap-align: start;
+        flex: 0 0 90%;
+        padding: 20px 10px;
+    }
+}
