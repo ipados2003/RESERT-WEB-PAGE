@@ -11,7 +11,7 @@ img {
 }
 
 #méthode img {
-  margin-top: 10px;
+  margin: 10px auto;
   width: max(10%, 40px);
   height: auto;
 }
