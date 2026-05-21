@@ -17,7 +17,7 @@ html, body {
 body {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     color: var(--color-text);
-    line-height: 1.2;
+    line-height: 1.4;
     font-size: var(--base-font-size);
     margin: 0;
     padding: 0;
@@ -29,13 +29,17 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-h3
-{
+h3{
     font-size: var(--H3-font-size);
+    line-height: 1.2;
 }
 
 h2 {
     font-size: var(--H2-font-size);
+    line-height: 1.2;
+}
+h1 {
+    line-height: 1.2;
 }
 
 p {

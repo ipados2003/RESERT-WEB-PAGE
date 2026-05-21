@@ -7,7 +7,6 @@
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    text-transform: uppercase;
     transition: transform 0.2s, background-color 0.2s;
     box-shadow: var(--Box-shadow);
     display: inline-flex;
