@@ -4,7 +4,6 @@
     align-items: center;
     gap: 40px;
     margin-top: 2rem;
-    text-align: left;
 }
 
 #bio .bio-img {
@@ -23,7 +22,6 @@
 @media (max-width: 768px) {
     #bio .bio-container {
         flex-direction: column;
-        text-align: center;
     }
 
     #bio .bio-img {

@@ -1,3 +1,10 @@
+.site-nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 .site-nav-inner {
     margin: 0 auto;
     padding: 12px;
@@ -16,7 +23,7 @@
 }
 
 .site-nav-inner a {
-    font-size: clamp(1.1rem, 0.2rem + 2vw, 1.4rem);
+    font-size: clamp(0.9rem, 0.2rem + 2vw, 1.4rem);
 }
 
 .menu-toggle {
@@ -65,24 +72,29 @@
     .site-nav-inner {
         position: fixed;
         top: 0;
-        right: -100%; /* Commence hors de l'écran */
+        right: -100%;
+        width: 100%;
         background-color: lightblue;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 30px;
+        padding: 0px;
+        padding-top: 40px;
         transition: right 0.3s ease-in-out;
         z-index: 1000;
     }
 
     .site-nav-inner.active {
-        right: 0; /* Glisse dans l'écran */
+        right: 0;
+    }
+
+    .site-nav-inner .btn {
+        max-width: 300px;
     }
 
     .site-nav-inner a {
         font-size: 1.2rem;
         padding: 10px;
         width: 100%;
-        text-align: left;
     }
 }
 

@@ -10,8 +10,10 @@
     text-transform: uppercase;
     transition: transform 0.2s, background-color 0.2s;
     box-shadow: var(--Box-shadow);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
+    justify-content: center;
 }
 
 .btn:hover {
@@ -22,4 +24,10 @@
 .btn:focus-visible {
     outline: 3px solid #1a1a1a;
     outline-offset: 2px;
+}
+
+.btn img {
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
 }

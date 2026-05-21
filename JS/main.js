@@ -14,7 +14,7 @@ function handleTextBox() {
     const names = ['Alice', 'Emma', 'Olivia', 'Charlotte', 'Sophia', 'Léa', 'Chloé', 'Camille', 'Manon', 'Louise', 'Jeanne', 'Juliette', 'Rose', 'Ambre', 'Inès'];
     const listrandomName = [...names].sort(() => Math.random() - 0.5);
     const times = ['2 jours', '1 jour', '12 heures', '10 heures', '5 heures', '2 heures', '1 heure', '30 minutes', '10 minutes', '5 minutes', '1 minute'];
-    const base_txt = "a réservé une un appel";
+    const base_txt = "a réservé un appel";
     const base_time = "il y a";
     let currentName = "";
     let currentTime = "";
@@ -78,11 +78,19 @@ function setupMenuToggle() {
 
     if (!menuToggle || !siteNavInner) return;
 
+    function updateInertState() {
+        if (menuToggle.getAttribute('aria-expanded') === 'true') {
+            siteNavInner.inert = false;
+        } else {
+            siteNavInner.inert = true;
+        }
+    }
+
     function hanfleResize() {
         if (ismobile()) {
-            siteNavInner.inert = true;
+            updateInertState();
         } else {
-            siteNavInner.inert = false;
+            updateInertState();
         }
     }
 
@@ -92,15 +100,21 @@ function setupMenuToggle() {
     function openMenu() {
         siteNavInner.classList.add('active');
         menuToggle.setAttribute('aria-expanded', 'true');
-        siteNavInner.inert = false;
+        updateInertState();
     }
 
     function closeMenu() {
         siteNavInner.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
-        siteNavInner.inert = true;
+        updateInertState();
     }
 
+    window.addEventListener('scroll', () => {
+        if (siteNavInner.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
     menuToggle.addEventListener('click', function() {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {

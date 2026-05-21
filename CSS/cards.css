@@ -2,7 +2,7 @@
 .features-grid-2 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
+    gap: 50px;
     margin-top: 2rem;
 }
 
@@ -16,6 +16,7 @@
 @media (max-width: 600px) {
     .features-grid-2 {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
     }
     .features-grid-4 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -26,13 +27,15 @@
 .feature-card {
     background: white;
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 20px 10px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    box-sizing: border-box;
 }
 
 .feature-card-big {
@@ -64,9 +67,8 @@
 }
 
 .feature-card p {
-    margin-bottom: -20px;
+    margin: 0px 10px;
     line-height: 1.4;
-    text-align: center;
 }
 
 .feature-card .small-text {
@@ -87,6 +89,7 @@
     anchor-name: --carousel;
     scroll-snap-type: x mandatory;
     scroll-marker-group: after;
+    align-items: center;
     }
 
     .carousel::scroll-marker-group{
@@ -112,20 +115,27 @@
     }
 
     .carousel::scroll-button(right), .carousel::scroll-button(left) {
-        content: '→';
+        content: '';
         border: none;
-        background-color: tomato;
-        color: white;
-        font-size: 2em;
-        border-radius: 50%;
-        padding-bottom: .2em;
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
         position: fixed;
         position-anchor: --carousel;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .carousel::scroll-button(right) {
+        background-image: url('../PNG/angle-circle-right.svg');
         position-area: right center;
     }
+
     .carousel::scroll-button(left) {
-        content: '←';
+        background-image: url('../PNG/angle-circle-right.svg');
+        transform: rotate(180deg);
         position-area: left center;
     }
 

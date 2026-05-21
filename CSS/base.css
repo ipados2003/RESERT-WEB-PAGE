@@ -17,7 +17,7 @@ html, body {
 body {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.2;
     font-size: var(--base-font-size);
     margin: 0;
     padding: 0;
@@ -40,15 +40,14 @@ h2 {
 
 p {
     margin-bottom: var(--space-paragraph);
-    text-align: left;
 }
 
 strong {
   font-size: 1.05em;
 }
 
-.texte-center p {
-    text-align: center;
+.texte-left p {
+    text-align: left;
 }
 
 #hero {
