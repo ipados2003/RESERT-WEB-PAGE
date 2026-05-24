@@ -82,14 +82,14 @@
     .carousel {
     width: 100%;
     overflow-x: auto;
-    margin: 3em auto;
+    margin: 1em auto;
+    margin-top: 13px;
     display: flex;
     gap: 1em;
     scroll-behavior: smooth;
     anchor-name: --carousel;
     scroll-snap-type: x mandatory;
     scroll-marker-group: after;
-    align-items: center;
     }
 
     .carousel::scroll-marker-group{
@@ -150,7 +150,6 @@
 
     .carousel .feature-card{
         scroll-snap-align: start;
-        flex: 0 0 90%;
-        padding: 20px 10px;
+        flex: 0 0 100%;
     }
 }

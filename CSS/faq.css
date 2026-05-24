@@ -44,3 +44,15 @@
     color: #555;
     line-height: 1.6;
 }
+
+#faq h2 {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+#faq {
+    background-color: #cecece;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: var(--Box-shadow);
+}

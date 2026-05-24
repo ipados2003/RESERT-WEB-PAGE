@@ -1,13 +1,14 @@
 
-img {
+img, picture, video, canvas, svg {
+  display: block;
   max-width: 100%;
-  height: auto;
 }
 
 #hero img {
   width: 80%;
   height: auto;
   min-width: 300px;
+  margin-top: 30px;
 }
 
 #méthode img {
@@ -17,4 +18,10 @@ img {
 }
 #méthode h3 {
   margin-top: -10px;
+}
+
+@media (max-width: 600px) {
+  #hero img {
+    margin-top: 0;
+  }
 }

@@ -90,4 +90,7 @@
     .text-box .text-content p:nth-of-type(2) {
         font-size: 0.8rem;
     }
+    .text-content {
+        margin-right: 15px;
+    }
 }

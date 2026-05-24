@@ -1,5 +1,5 @@
 .pillar-group {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     margin-bottom: 2.5rem;
 }
 
@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Aligne à gauche */
-    gap: 1rem;
+    gap: 0.7rem;
     margin-bottom: 1.5rem;
     text-align: left;
 }
@@ -15,7 +15,7 @@
 .pillar-number {
     background-color: #1a1a1a; /* Fond noir */
     color: white; /* Chiffre en blanc */
-    font-size: 1.75rem;
+    font-size: 1.55rem;
     font-weight: bold;
     border-radius: 50%; /* Pour faire un cercle */
     width: 40px;
@@ -28,6 +28,10 @@
 
 .pillar-group__title h3 {
     margin: 0;
-    font-size: 1.75rem;
+    font-size: var(--H2-font-size);
     font-weight: bold;
+}
+
+#ecosystem h2 {
+    font-size: calc(var(--H2-font-size) + 5px);
 }
