@@ -66,6 +66,17 @@
     color: white;
 }
 
+.full-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
+.feature-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ajoute un espace entre l'image et le texte */
+}
+
 .feature-card p {
     margin: 0px 10px;
     line-height: 1.4;
@@ -129,13 +140,12 @@
     }
 
     .carousel::scroll-button(right) {
-        background-image: url('../PNG/angle-circle-right.svg');
+        background-image: url('../PNG/angle-petit-droit.svg');
         position-area: right center;
     }
 
     .carousel::scroll-button(left) {
-        background-image: url('../PNG/angle-circle-right.svg');
-        transform: rotate(180deg);
+        background-image: url('../PNG/angle-petit-gauche.svg');
         position-area: left center;
     }
 

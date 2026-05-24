@@ -9,7 +9,6 @@
 #cible li,
 #exclusion li {
     margin-bottom: 2rem;
-    padding-left: 4rem;
     min-height: 40px;
     display: flex;
     align-items: center;
@@ -18,29 +17,23 @@
 /* Base partagée des puces icones */
 #cible li::before,
 #exclusion li::before {
+    content: ""; /* On vide le contenu */
     display: inline-block;
-    background-color: white;
-    font-weight: bold;
-    position: static;
+    background-position: center; /* On centre l'image de fond */
+    background-repeat: no-repeat; /* On évite la répétition */
+    background-size: contain; /* On contrôle la taille de l'icône */
     margin-right: 1.5rem;
-    margin-left: -4rem;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     flex-shrink: 0;
 }
 
 /* Ticks (✔) — section "Pour qui" */
 #cible li::before {
-    content: "✔";
-    color: #27ae60;
+    background-image: url('../PNG/check-circle.svg');
 }
 
 /* Croix (✖) — section "Exclusion" */
 #exclusion li::before {
-    content: "✖";
-    color: #c0392b;
+    background-image: url('../PNG/croix-cercle.svg');
 }
