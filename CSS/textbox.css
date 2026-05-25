@@ -6,7 +6,7 @@
     bottom: 20px;
     right: 20px;
     width: max-content; /* Ajuste la largeur au contenu */
-    padding: 15px 25px; /* Augmentation du padding */
+    padding: 16px; /* Augmentation du padding */
     background-color: #ffffff; /* Fond blanc */
     border: none; /* Suppression de la bordure */
     border-radius: 15px; /* Coins plus arrondis */
@@ -19,19 +19,27 @@
 }
 
 .text-box-icon {
-    padding: 5px; /* Espace autour de l'image */
     flex-shrink: 0;
-    width: 40px; /* Taille de l'image */
     border-radius: 25%;
+}
+
+.text-box-icon-wrapper {
+    background-color: #f78ca0;
+    border-radius: 25%;
+    flex-shrink: 0;
+}
+
+.text-box-icon {
     filter: invert(1) brightness(1) sepia(0) hue-rotate(0deg) saturate(5);
-    background-color: #f78ca0; /* Couleur de fond pour l'icône */
+    padding: 3px;
+    width: 35px;
 }
 
 .text-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 5px; /* Espace entre le texte et le bouton de fermeture */
+    margin-right: 15px;
 }
 
 .text-box p {
@@ -54,7 +62,7 @@
     top: 0;
     right: 5px;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 1;
 }
 
@@ -93,8 +101,5 @@
     }
     .text-box .text-content p:nth-of-type(2) {
         font-size: 0.8rem;
-    }
-    .text-content {
-        margin-right: 15px;
     }
 }
