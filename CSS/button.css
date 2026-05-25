@@ -2,8 +2,8 @@
     background-color: #f78ca0;
     color: var(--color-bg, #fafafa);
     font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px 20px;
+    font-weight: 600;
+    padding: 15px 24px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -13,6 +13,7 @@
     align-items: center;
     text-decoration: none;
     justify-content: center;
+    gap: 3px;
 }
 
 .btn:hover {
@@ -26,7 +27,8 @@
 }
 
 .btn img {
-    width: 40px;
+    width: 20px;
     vertical-align: middle;
     margin-right: 8px;
+    filter: invert(1) brightness(1) sepia(1) hue-rotate(-50deg) saturate(5);
 }

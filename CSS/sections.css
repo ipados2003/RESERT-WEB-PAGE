@@ -17,7 +17,7 @@ section {
 
 .main{
     margin: auto;
-    padding: 0 8px;
+    padding: 0 16px;
     opacity: 100;
     max-width: 700px;
 }
@@ -36,5 +36,6 @@ section.is-visible {
 
 .section-rouge h2 {
     margin-top: 0;
+    padding: 0;
 }
 

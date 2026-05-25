@@ -22,8 +22,8 @@
     padding: 5px; /* Espace autour de l'image */
     flex-shrink: 0;
     width: 40px; /* Taille de l'image */
-    height: 40px;
     border-radius: 25%;
+    filter: invert(1) brightness(1) sepia(0) hue-rotate(0deg) saturate(5);
     background-color: #f78ca0; /* Couleur de fond pour l'icône */
 }
 
@@ -79,11 +79,11 @@
         right: 10px;
         bottom: 10px;
         max-width: 100%;
+        gap: 10px;
     }
     .text-box-icon {
         padding: 3px;
         width: 35px;
-        height: 35px;
     }
     .close-btn {
         font-size: 1em;

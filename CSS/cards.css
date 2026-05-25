@@ -71,10 +71,15 @@
     height: auto;
     border-radius: 20px 20px 0 0;
 }
+
 .feature-card h4 {
     display: flex;
     align-items: center;
     gap: 10px; /* Ajoute un espace entre l'image et le texte */
+}
+
+.feature-card h4 img {
+    width: 40px; /* Ajuste la taille de l'image selon tes besoins */
 }
 
 .feature-card p {

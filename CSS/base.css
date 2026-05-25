@@ -43,6 +43,7 @@ h2 {
     font-size: var(--H2-font-size);
     margin-top: 60px;
     margin-bottom: 0rem;
+    padding: 0 10px;
 }
 
 p {
