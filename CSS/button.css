@@ -30,4 +30,5 @@
     width: 20px;
     vertical-align: middle;
     margin-right: 8px;
+    filter: invert(1) brightness(1) sepia(1) hue-rotate(-50deg) saturate(5);
 }
