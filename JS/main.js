@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     handleTextBox();
     setupIntersectionObserver();
     setupMenuToggle();
+    setupCarousels();
 });
 
 function handleTextBox() {
@@ -122,6 +123,111 @@ function setupMenuToggle() {
         } else {
             openMenu();
         }
+    });
+}
+
+function setupCarousels() {
+    const carousels = document.querySelectorAll('.carousel-wrapper');
+
+    carousels.forEach(wrapper => {
+        const carousel = wrapper.querySelector('.carousel');
+        if (!carousel) return;
+
+        const prevBtn = wrapper.querySelector('.carousel-btn.prev');
+        const nextBtn = wrapper.querySelector('.carousel-btn.next');
+        const dotsContainer = wrapper.querySelector('.carousel-dots');
+        
+        let items = Array.from(carousel.children);
+
+        if (items.length === 0) return;
+
+        let currentIndex = 0;
+
+        function updateCarousel(smooth = true) {
+            const itemWidth = items[0].getBoundingClientRect().width;
+            const newScrollLeft = itemWidth * currentIndex;
+            
+            carousel.scrollTo({
+                left: newScrollLeft,
+                behavior: smooth ? 'smooth' : 'auto'
+            });
+            updateDots();
+            updateButtons();
+        }
+
+        function createDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            items.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                }
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function updateDots() {
+            if (!dotsContainer) return;
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function updateButtons() {
+            if (prevBtn) {
+                prevBtn.disabled = currentIndex === 0;
+            }
+            if (nextBtn) {
+                nextBtn.disabled = currentIndex === items.length - 1;
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < items.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+        }
+
+        let scrollTimeout;
+        carousel.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const itemWidth = items[0].getBoundingClientRect().width;
+                const newIndex = Math.round(carousel.scrollLeft / itemWidth);
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateButtons();
+                    updateDots();
+                }
+            }, 20); // Délai pour éviter les mises à jour excessives pendant le défilement
+        });
+
+        window.addEventListener('resize', () => {
+            updateCarousel(false);
+        });
+
+        updateButtons();
+        createDots();
     });
 }
 

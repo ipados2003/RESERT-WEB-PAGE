@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="CSS/img.css">
     <link rel="stylesheet" href="CSS/textbox.css">
     <link rel="stylesheet" href="CSS/testimonials.css">
+    <script src="JS/main.js" defer></script>
 </head>
 <body>
     <section class="main">
@@ -168,31 +169,36 @@
 
         <section id="preuves-photo">
             <h2>Elles ont transformé leur corps avec ma méthode</h2>
-            <div class="features-grid-2 carousel">
-                <div class="feature-card">
-                    <img src="PNG/Avant_Apres_1.png" alt="">
-                    <p>Camille, 26 ans<br><strong>-4kg en 1 mois</strong></p>
+            <div class="carousel-wrapper">
+                <div class="carousel features-grid-2">
+                    <div class="feature-card">
+                        <img src="PNG/Avant_Apres_1.png" alt="">
+                        <p>Camille, 26 ans<br><strong>-4kg en 1 mois</strong></p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="PNG/Avant_Apres_2.png" alt="">
+                        <p>Marine, 37 ans<br><strong>-5kg en 3 mois</strong></p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="PNG/Avant_Apres_3.png" alt="">
+                        <p>Sophie, 36 ans<br><strong>-5kg en 4 mois</strong></p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="PNG/Avant_Apres_4.png" alt="">
+                        <p>Dorissa, 29 ans<br><strong>-7kg en 3 mois</strong></p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <img src="PNG/Avant_Apres_2.png" alt="">
-                    <p>Marine, 37 ans<br><strong>-5kg en 3 mois</strong></p>
-                </div>
-                <div class="feature-card">
-                    <img src="PNG/Avant_Apres_3.png" alt="">
-                    <p>Sophie, 36 ans<br><strong>-5kg en 4 mois</strong></p>
-                </div>
-                <div class="feature-card">
-                    <img src="PNG/Avant_Apres_4.png" alt="">
-                    <p>Dorissa, 29 ans<br><strong>-7kg en 3 mois</strong></p>
-                </div>
+                <button class="carousel-btn prev" aria-label="Précédent"><img src="PNG/gauche.svg" alt="Précédent"></button>
+                <button class="carousel-btn next" aria-label="Suivant"><img src="PNG/droit.svg" alt="Suivant"></button>
+                <div class="carousel-dots"></div>
             </div>
         </section>
 
         <section id="preuves-texte">
             <h2>Témoignages écrits :</h2>
             <!-- Manque 1 image -->
-            <div class="testimonial-columns carousel">
-                <div class="column">
+            <div class="carousel-wrapper">
+                <div class="carousel features-grid-2">
                     <div class="feature-card">
                         <img src="PNG/Msg_Reussit_1.png" alt="Témoignage 1">
                     </div>
@@ -202,8 +208,6 @@
                     <div class="feature-card">
                         <img src="PNG/Msg_Reussit_5.png" alt="Témoignage 5">
                     </div>
-                </div>
-                <div class="column">
                     <div class="feature-card">
                         <img src="PNG/Msg_Reussit_8.png" alt="Témoignage 7">
                     </div>
@@ -214,6 +218,9 @@
                         <img src="PNG/Msg_Reussit_6.png" alt="Témoignage 4">
                     </div>
                 </div>
+                <button class="carousel-btn prev" aria-label="Précédent"><img src="PNG/gauche.svg" alt="Précédent"></button>
+                <button class="carousel-btn next" aria-label="Suivant"><img src="PNG/droit.svg" alt="Suivant"></button>
+                <div class="carousel-dots"></div>
             </div>
         </section>
 
@@ -320,8 +327,5 @@
             <a class="btn" href="https://tally.so/r/NpYEzl"><img src="PNG/calendrier.png" alt="calendrier">Réserve ton appel</a>
         </section>
     </section>
-    
-    <script src="JS/main.js"></script>
-    
 </body>
 </html>
