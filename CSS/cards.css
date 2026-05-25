@@ -145,12 +145,12 @@
     }
 
     .carousel::scroll-button(right) {
-        background-image: url('../PNG/calendrier.png');
+        background-image: url('../PNG/angle-petit-droit.svg');
         position-area: right center;
     }
 
     .carousel::scroll-button(left) {
-        background-image: url('../PNG/calendrier.png');
+        background-image: url('../PNG/angle-petit-gauche.svg');
         position-area: left center;
     }
 
