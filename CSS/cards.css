@@ -142,16 +142,15 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        z-index: 10;
     }
 
     .carousel::scroll-button(right) {
-        background-image: url('../PNG/angle-petit-droit.svg');
+        background-image: url('../PNG/calendrier.png');
         position-area: right center;
     }
 
     .carousel::scroll-button(left) {
-        background-image: url('../PNG/angle-petit-gauche.svg');
+        background-image: url('../PNG/calendrier.png');
         position-area: left center;
     }
 
