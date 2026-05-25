@@ -71,3 +71,6 @@ strong {
     margin-bottom: 0;
     font-size: clamp(1.1rem, 1.8vw + 0.8rem, 2rem);
 }
+#méthode h2{
+    margin-top: 70px;
+}

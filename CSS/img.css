@@ -13,11 +13,18 @@ img, picture, video, canvas, svg {
 
 #méthode img {
   margin: 10px auto;
+  margin-bottom: 7px;
+  margin-top: 33px;
   width: max(10%, 40px);
   height: auto;
 }
 #méthode h3 {
-  margin-top: -10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#méthode p{
+  margin-top: 10px;
 }
 
 @media (max-width: 600px) {

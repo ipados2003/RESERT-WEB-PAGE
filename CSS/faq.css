@@ -3,8 +3,8 @@
     background-color: white;
     border: 1px solid #333;
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 1rem;
+    padding: 20px 10px;
+    margin-bottom: 0.5rem;
     text-align: left;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -12,7 +12,7 @@
 
 #faq summary {
     list-style: none;
-    font-weight: bold;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,15 +20,14 @@
 
 #faq summary::after {
     content: " ";
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url('../PNG/angle-petit-bas.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     transition: transform 0.3s ease;
     flex-shrink: 0;
-    margin-left: 15px;
 }
 
 #faq details[open] summary::after {
@@ -52,7 +51,7 @@
 
 #faq {
     background-color: #cecece;
-    padding: 32px;
+    padding: 32px 16px;
     border-radius: 8px;
     box-shadow: var(--Box-shadow);
 }
