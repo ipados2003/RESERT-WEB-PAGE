@@ -35,7 +35,6 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    white-space: nowrap;
 }
 
 .feature-card-big {
@@ -75,6 +74,8 @@
 .feature-card p {
     margin: 0px 10px;
     line-height: 1.4;
+    white-space: nowrap;
+    text-wrap: wrap;
 }
 
 .feature-card .small-text {
