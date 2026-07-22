@@ -76,6 +76,8 @@ function setupMenuToggle() {
     const menuToggle = document.querySelector('.menu-toggle');
     const siteNavInner = document.querySelector('.site-nav-inner');
     const navLinks = document.querySelectorAll('.site-nav-inner a');
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 4;
 
     if (!menuToggle || !siteNavInner) return;
 
@@ -87,33 +89,35 @@ function setupMenuToggle() {
         }
     }
 
-    function hanfleResize() {
-        if (ismobile()) {
-            updateInertState();
-        } else {
-            updateInertState();
-        }
-    }
-
-    window.addEventListener('resize', hanfleResize);
-    hanfleResize();
-
     function openMenu() {
         siteNavInner.classList.add('active');
         menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.classList.remove('hidden');
         updateInertState();
     }
 
     function closeMenu() {
         siteNavInner.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.blur();
         updateInertState();
     }
 
     window.addEventListener('scroll', () => {
+        const currentScrollY = Math.max(window.scrollY, 0);
+        const delta = currentScrollY - lastScrollY;
+
         if (siteNavInner.classList.contains('active')) {
             closeMenu();
         }
+
+        if (currentScrollY <= 5 || delta < -scrollThreshold) {
+            menuToggle.classList.remove('hidden');
+        } else if (delta > scrollThreshold) {
+            menuToggle.classList.add('hidden');
+        }
+
+        lastScrollY = currentScrollY;
     });
     
     menuToggle.addEventListener('click', function() {
@@ -122,6 +126,17 @@ function setupMenuToggle() {
             closeMenu();
         } else {
             openMenu();
+            menuToggle.blur();
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
         }
     });
 }

@@ -1,6 +1,6 @@
 :root {
-    --color-text: #1a1a1a;
-    --color-bg: #fafafa;
+    --color-text: #511029;
+    --color-bg: #f0f5f0;
     --space-paragraph: 1.5rem;
     --base-font-size: clamp(1.1rem, 1.2vw + 0.6rem, 1.4rem);
     --H2-font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
