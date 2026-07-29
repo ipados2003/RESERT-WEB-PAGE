@@ -41,7 +41,7 @@ h3{
 
 h2 {
     font-size: var(--H2-font-size);
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 0rem;
     padding: 0 10px;
 }
@@ -53,7 +53,7 @@ p {
 }
 
 strong {
-  font-size: 1.05em;
+  font-size: inherit;
 }
 
 .texte-left p {
@@ -64,10 +64,11 @@ strong {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 0;
 }
 
 #hero p {
-    margin-top: -20px;
+    margin-top: -5px;
     margin-bottom: 0;
     font-size: clamp(1.1rem, 1.8vw + 0.8rem, 2rem);
 }

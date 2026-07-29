@@ -25,7 +25,7 @@
 }
 
 .feature-card {
-    background: white;
+    background: var(--color-bg);
     border-radius: 20px;
     padding: 20px 10px;
     width: 100%;
@@ -43,9 +43,35 @@
 }
 
 .feature-card-little {
-    padding: 40px 0px;
+    padding: 28px 12px;
     min-height: 50px;
+    gap: 10px;
+    display: grid;
+    place-content: center;
+    font-size: 1.15rem;
+    margin: 0;
 }
+
+.feature-card-little .icon{
+    font-size: 2.2rem;
+}
+
+.feature-card p {
+    margin: 0px 10px;
+    line-height: 1.4;
+    font-weight: 600;
+    white-space: nowrap;
+    text-wrap: wrap;
+}
+
+
+.feature-card-little p {
+    margin: 0;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-wrap: wrap;
+}
+
 
 .feature-card {
     transition: transform 0.3s ease;
@@ -71,12 +97,7 @@
     width: 35px; /* Ajuste la taille de l'image selon tes besoins */
 }
 
-.feature-card p {
-    margin: 0px 10px;
-    line-height: 1.4;
-    white-space: nowrap;
-    text-wrap: wrap;
-}
+
 
 .feature-card .small-text {
     font-weight: normal;

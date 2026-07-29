@@ -7,7 +7,7 @@
     right: 20px;
     width: max-content; /* Ajuste la largeur au contenu */
     padding: 16px; /* Augmentation du padding */
-    background-color: #ffffff; /* Fond blanc */
+    background-color: var(--color-bg); /* Vert très clair */
     border: none; /* Suppression de la bordure */
     border-radius: 15px; /* Coins plus arrondis */
     box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Ombre plus douce */
@@ -24,7 +24,7 @@
 }
 
 .text-box-icon-wrapper {
-    background-color: #f78ca0;
+    background-color: #8b2a4f;
     border-radius: 25%;
     flex-shrink: 0;
 }
