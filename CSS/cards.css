@@ -2,7 +2,7 @@
 .features-grid-2 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 50px;
+    gap: 25px;
     margin-top: 2rem;
 }
 
@@ -13,9 +13,9 @@
     margin-top: 2rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .features-grid-2 {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(1, minmax(220px, 1fr));
         gap: 10px;
     }
     .features-grid-4 {
@@ -33,7 +33,6 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    align-items: center;
     box-sizing: border-box;
 }
 
@@ -57,9 +56,8 @@
 }
 
 .feature-card p {
-    margin: 0px 10px;
+    margin: 0.8rem 10px 0px 10px;
     line-height: 1.4;
-    font-weight: 600;
     white-space: nowrap;
     text-wrap: wrap;
 }
@@ -67,6 +65,7 @@
 
 .feature-card-little p {
     margin: 0;
+    font-weight: 600;
     line-height: 1.4;
     white-space: nowrap;
     text-wrap: wrap;
@@ -90,7 +89,10 @@
 .feature-card h4 {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
+    margin: 1rem 0 0.7rem 0;
+    font-weight: bold;
+    font-size: clamp(1.15rem, 4.5vw, 1.55rem);
 }
 
 .feature-card h4 img {
