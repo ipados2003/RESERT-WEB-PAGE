@@ -99,8 +99,6 @@
     width: 35px; /* Ajuste la taille de l'image selon tes besoins */
 }
 
-
-
 .feature-card .small-text {
     font-weight: normal;
     font-size: 0.9rem;
@@ -108,9 +106,87 @@
     margin-top: 10px;
 }
 
-.carousel-btn,
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    margin-top: 13px;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; 
+}
+
+.carousel .feature-card{
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+}
+
+.carousel-btn img {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
 .carousel-dots {
-    display: none;
+    text-align: center;
+    padding: 10px 0;
+    display: block;
+    
+}
+
+.carousel-dots .dot {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: lightgray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-dots .dot.active {
+    background-color: #8b2a4f;
 }
 
 @media (max-width: 600px) {
@@ -192,9 +268,5 @@
         cursor: pointer;
         outline: none;
         -webkit-tap-highlight-color: transparent;
-    }
-
-    .carousel-dots .dot.active {
-        background-color: #f46e88;
     }
 }
