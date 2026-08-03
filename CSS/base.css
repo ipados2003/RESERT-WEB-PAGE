@@ -84,3 +84,9 @@ strong {
 #méthode p{
   margin-top: 10px;
 }
+
+a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+}
