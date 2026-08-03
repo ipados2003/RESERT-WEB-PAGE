@@ -75,3 +75,12 @@ strong {
 #méthode h2{
     margin-top: 70px;
 }
+
+#méthode h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#méthode p{
+  margin-top: 10px;
+}

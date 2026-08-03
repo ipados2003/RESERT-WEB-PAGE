@@ -11,22 +11,6 @@ img, picture, video, canvas, svg {
   margin-top: 30px;
 }
 
-#méthode img {
-  margin: 10px auto;
-  margin-bottom: 7px;
-  margin-top: 33px;
-  width: max(10%, 40px);
-  height: auto;
-}
-#méthode h3 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-#méthode p{
-  margin-top: 10px;
-}
-
 @media (max-width: 600px) {
   #hero img {
     margin-top: 0;

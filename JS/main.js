@@ -158,14 +158,44 @@ function setupCarousels() {
 
         let currentIndex = 0;
 
-        function updateCarousel(smooth = true) {
-            const itemWidth = items[0].getBoundingClientRect().width;
-            const newScrollLeft = itemWidth * currentIndex;
-            
-            carousel.scrollTo({
-                left: newScrollLeft,
-                behavior: smooth ? 'smooth' : 'auto'
+        function updateCarouselHeight() {
+            const currentItem = items[currentIndex];
+            if (!currentItem) return;
+
+            const nextHeight = Math.ceil(currentItem.getBoundingClientRect().height);
+            if (nextHeight > 0) {
+                carousel.style.height = `${nextHeight}px`;
+            }
+        }
+
+        function getClosestIndexToCenter() {
+            const viewportCenter = carousel.scrollLeft + (carousel.clientWidth / 2);
+            let closestIndex = 0;
+            let minDistance = Number.POSITIVE_INFINITY;
+
+            items.forEach((item, index) => {
+                const itemCenter = item.offsetLeft + (item.offsetWidth / 2);
+                const distance = Math.abs(itemCenter - viewportCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = index;
+                }
             });
+
+            return closestIndex;
+        }
+
+        function updateCarousel(smooth = true) {
+            const targetItem = items[currentIndex];
+            if (!targetItem) return;
+
+            targetItem.scrollIntoView({
+                behavior: smooth ? 'smooth' : 'auto',
+                inline: 'center',
+                block: 'nearest'
+            });
+            updateCarouselHeight();
             updateDots();
             updateButtons();
         }
@@ -227,22 +257,38 @@ function setupCarousels() {
         carousel.addEventListener('scroll', () => {
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
-                const itemWidth = items[0].getBoundingClientRect().width;
-                const newIndex = Math.round(carousel.scrollLeft / itemWidth);
+                const newIndex = getClosestIndexToCenter();
                 if (newIndex !== currentIndex) {
                     currentIndex = newIndex;
                     updateButtons();
                     updateDots();
+                    updateCarouselHeight();
                 }
             }, 20); // Délai pour éviter les mises à jour excessives pendant le défilement
         });
 
         window.addEventListener('resize', () => {
-            updateCarousel(false);
+            currentIndex = getClosestIndexToCenter();
+            updateButtons();
+            updateDots();
+            updateCarouselHeight();
         });
 
+        items.forEach(item => {
+            const images = item.querySelectorAll('img');
+            images.forEach(image => {
+                if (!image.complete) {
+                    image.addEventListener('load', () => {
+                        updateCarouselHeight();
+                    }, { once: true });
+                }
+            });
+        });
+
+        currentIndex = getClosestIndexToCenter();
         updateButtons();
         createDots();
+        updateCarouselHeight();
     });
 }
 
