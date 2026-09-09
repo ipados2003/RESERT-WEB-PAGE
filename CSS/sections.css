@@ -3,6 +3,7 @@
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -15,10 +16,10 @@ section {
     opacity: 0;
 }
 
-.main{
+.main {
     margin: auto;
     padding: 0 16px;
-    opacity: 100;
+    opacity: 1;
     max-width: 700px;
 }
 
@@ -38,4 +39,3 @@ section.is-visible {
     margin-top: 0;
     padding: 0;
 }
-
